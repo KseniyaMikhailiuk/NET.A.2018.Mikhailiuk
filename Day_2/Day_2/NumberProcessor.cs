@@ -7,8 +7,8 @@ namespace Day_2
     /// </summary>
     public class NumberProcessor
     {
-        private const int _maxIndex = 31;
-        private const int _minIndex = 0;
+        private const int MAXINDEX = 31;
+        private const int MININDEX = 0;
 
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace Day_2
         /// <param name="secondIndex"></param>
         public static void InsertNumber(int sourceNumber, ref int destinationNumber, int firstIndex, int secondIndex)
         {
-            if (firstIndex > secondIndex || firstIndex < _minIndex || secondIndex > _maxIndex)
+            if (firstIndex > secondIndex || firstIndex < MININDEX || secondIndex > MAXINDEX)
             {
                 throw new ArgumentException("Check indexes");
             }
