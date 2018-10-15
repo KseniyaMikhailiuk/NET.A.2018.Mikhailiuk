@@ -24,36 +24,19 @@ namespace Day_2
             {
                 throw new ArgumentException("Check indexes");
             }
-            char[] sourceNumber32 = FromIntTo32Bit(sourceNumber);
-            char[] destinationNumber32 = FromIntTo32Bit(destinationNumber);
-            int j = sourceNumber32.Length - (secondIndex - firstIndex) - 1;
-            for (int i = destinationNumber32.Length - secondIndex - 1; 
-                        i < destinationNumber32.Length - firstIndex; i++)
+            destinationNumber = BitOperations(destinationNumber);
+
+
+            int BitOperations(int destination)
             {
-                destinationNumber32[i] = sourceNumber32[j];
-                j++;
+                int maskSource = ~(int.MaxValue << (MAXINDEX - (secondIndex - firstIndex))) >> (MAXINDEX - secondIndex - 1);
+                sourceNumber &= maskSource;
+                sourceNumber <<= firstIndex;
+                int destMask = ~(int.MaxValue << (secondIndex - firstIndex)) >> (secondIndex - 1);
+                destination &= destMask;
+
+                return destination |= sourceNumber;
             }
-            destinationNumber = From32BitToInt(destinationNumber32);
-        }
-
-
-        private static char[] FromIntTo32Bit(int number)
-        {
-            char[] bits32 = new char[32];
-            char[] binaryFormat = Convert.ToString(number, 2).ToCharArray();
-            int i = 0;
-            while (i < bits32.Length - binaryFormat.Length)
-            {
-                bits32[i] = '0';
-                i++;
-            }
-            Array.Copy(binaryFormat, 0, bits32, i, binaryFormat.Length);
-            return bits32;
-        }
-
-        private static int From32BitToInt(char[] number32)
-        {
-            return Convert.ToInt32(new string(number32), 2);
         }
     }
 }
