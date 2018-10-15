@@ -13,21 +13,21 @@ namespace Day_1.Tests
             int[] unsortedArray_2 = new int[1000];
             unsortedArray_1.CopyTo(unsortedArray_2, 0);
             Array.Sort(unsortedArray_1);
-            MergeSorter.Sort(ref unsortedArray_2);
+            MergeSorter.Sort(unsortedArray_2);
             CollectionAssert.AreEqual(unsortedArray_1, unsortedArray_2);
         }
 
         [TestCase(null)]
         public void MergeSorter_nullTest(int[] array)
         {
-            Assert.Throws<ArgumentNullException>(() => MergeSorter.Sort(ref array));
+            Assert.Throws<ArgumentNullException>(() => MergeSorter.Sort(array));
         }
 
         [Test]
         public void Sort_emptyArrayTest()
         {
             int[] array = new int[0];
-            Assert.Throws<ArgumentException>(() => MergeSorter.Sort(ref array));
+            Assert.Throws<ArgumentException>(() => MergeSorter.Sort(array));
         }
 
 

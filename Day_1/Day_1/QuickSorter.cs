@@ -12,7 +12,7 @@ namespace Day_1
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
-        public static void Sort(ref int[] array)
+        public static void Sort(int[] array)
         {
             if (array == null)
             {
@@ -22,10 +22,11 @@ namespace Day_1
             {
                 throw new ArgumentException("Array length must be > 1");
             }
-            RedistributeElems(ref array, 0, array.Length - 1);
+            var resultArray = RedistributeElems(array, 0, array.Length - 1);
+            Array.Copy(resultArray, array, array.Length);
         } 
 
-        private static void RedistributeElems(ref int[] array, int leftBorder, int rightBorder)
+        private static int[] RedistributeElems(int[] array, int leftBorder, int rightBorder)
         {
             if (array.Length > 1)
             {
@@ -33,12 +34,12 @@ namespace Day_1
                 int leftPointer = leftBorder, rightPointer = rightBorder;
                 while (leftPointer < baseElemIndex || rightPointer > baseElemIndex)
                 {
-                    ProcessLeftSide(ref array, ref rightPointer, leftPointer, ref baseElemIndex);
+                    ProcessLeftSide(array, ref rightPointer, leftPointer, ref baseElemIndex);
                     if (leftPointer < baseElemIndex)
                     {
                         leftPointer++;
                     }
-                    ProcessRightSide(ref array, rightPointer, ref leftPointer, ref baseElemIndex);
+                    ProcessRightSide(array, rightPointer, ref leftPointer, ref baseElemIndex);
                     if (rightPointer > baseElemIndex)
                     {
                         rightPointer--;
@@ -46,20 +47,22 @@ namespace Day_1
                 }
                 if (array.Length > 2)
                 {
-                    DivideArray(ref array, baseElemIndex);
+                    DivideArray(array, baseElemIndex);
                 }
             }
+
+            return array;
         }
 
-        private static void DivideArray(ref int[] array, int baseElemIndex)
+        private static void DivideArray(int[] array, int baseElemIndex)
         {
             var firstPart = new int[baseElemIndex];
             Array.Copy(array, 0, firstPart, 0, baseElemIndex);
             var secondPart = new int[array.Length - baseElemIndex];
             Array.Copy(array, baseElemIndex, secondPart, 0, array.Length - baseElemIndex);
-            RedistributeElems(ref firstPart, 0, firstPart.Length - 1);
-            RedistributeElems(ref secondPart, 0, secondPart.Length - 1);
-            array = MergeArrays(firstPart, secondPart);
+            firstPart = RedistributeElems(firstPart, 0, firstPart.Length - 1);
+            secondPart = RedistributeElems(secondPart, 0, secondPart.Length - 1);
+            Array.Copy(MergeArrays(firstPart, secondPart), array, array.Length);
         }
 
         private static int[] MergeArrays(int[] first, int[] second)
@@ -67,10 +70,11 @@ namespace Day_1
             int[] result = new int[first.Length + second.Length];
             first.CopyTo(result, 0);
             second.CopyTo(result, first.Length);
+
             return result;
         }
 
-        private static void ProcessRightSide(ref int[] array, int rightPointer, ref int leftPointer, ref int baseElementIndex)
+        private static void ProcessRightSide(int[] array, int rightPointer, ref int leftPointer, ref int baseElementIndex)
         {
             if (array[rightPointer] < array[baseElementIndex] && rightPointer >= baseElementIndex)
             {
@@ -83,7 +87,7 @@ namespace Day_1
             }
         }
 
-        private static void ProcessLeftSide(ref int[] array, ref int rightPointer, int leftPointer, ref int baseElementIndex)
+        private static void ProcessLeftSide(int[] array, ref int rightPointer, int leftPointer, ref int baseElementIndex)
         {
             if (array[leftPointer] > array[baseElementIndex] && leftPointer <= baseElementIndex)
             {

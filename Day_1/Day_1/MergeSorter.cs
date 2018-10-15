@@ -11,7 +11,7 @@ namespace Day_1
         /// Sorts elements in int array using merge algorithm.
         /// </summary>
         /// <param name="array"></param>
-        public static void Sort(ref int[] array)
+        public static void Sort(int[] array)
         {
             if (array == null)
             {
@@ -21,7 +21,8 @@ namespace Day_1
             {
                 throw new ArgumentException("Array length must be > 1");
             }
-            array = DivideSortandMerge(array);
+            var resultArray = DivideSortandMerge(array);
+            Array.Copy(resultArray, array, array.Length);
         }
 
         private static int[] DivideSortandMerge(int[] array)

@@ -13,21 +13,21 @@ namespace Day_1.Tests
             int[] unsortedArray_2 = new int[1000];
             unsortedArray_1.CopyTo(unsortedArray_2, 0);
             Array.Sort(unsortedArray_1);
-            QuickSorter.Sort(ref unsortedArray_2);
+            QuickSorter.Sort(unsortedArray_2);
             CollectionAssert.AreEqual(unsortedArray_1, unsortedArray_2);
         }
 
         [TestCase(null)]
         public void QuickSorter_nullTest(int[] array)
         {
-            Assert.Throws<ArgumentNullException>(() => QuickSorter.Sort(ref array));
+            Assert.Throws<ArgumentNullException>(() => QuickSorter.Sort(array));
         }
 
         [Test]
         public void Sort_emptyArrayTest()
         {
             int[] array = new int[0];
-            Assert.Throws<ArgumentException>(() => QuickSorter.Sort(ref array));
+            Assert.Throws<ArgumentException>(() => QuickSorter.Sort(array));
         }
 
 
