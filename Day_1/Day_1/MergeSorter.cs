@@ -8,19 +8,21 @@ namespace Day_1
     public class MergeSorter
     {
         /// <summary>
-        /// Sorts elements in int array using merge algorithm.
+        /// Sorts elements in <see cref="int"/> array using merge algorithm.
         /// </summary>
-        /// <param name="array"></param>
+        /// <param name="array">array to sort</param>
         public static void Sort(int[] array)
         {
             if (array == null)
             {
                 throw new ArgumentNullException();
             }
+
             if (array.Length < 1)
             {
                 throw new ArgumentException("Array length must be > 1");
             }
+
             var resultArray = DivideSortandMerge(array);
             Array.Copy(resultArray, array, array.Length);
         }
@@ -36,6 +38,7 @@ namespace Day_1
             {
                 firstPart = DivideSortandMerge(firstPart);
             }
+
             if (secondPart.Length > 1)
             {
                 secondPart = DivideSortandMerge(secondPart);
@@ -60,12 +63,15 @@ namespace Day_1
                     result[i] = secondPart[secondCounter];
                     secondCounter++;
                 }
+
                 i++;
             }
+
             if (firstCounter != firstPart.Length)
             {
                 Array.Copy(firstPart, firstCounter, result, i, firstPart.Length - firstCounter);
             }
+
             if (secondCounter != secondPart.Length)
             {
                 Array.Copy(secondPart, secondCounter, result, i, secondPart.Length - secondCounter);

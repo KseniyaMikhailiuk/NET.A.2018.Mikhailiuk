@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace Day_1.Tests
 {
     [TestFixture]
-    class MergeSorterTests
+    public class MergeSorterTests
     { 
         [Test]
         public void MergeSorter_hugeArrayTest()
@@ -29,7 +29,6 @@ namespace Day_1.Tests
             int[] array = new int[0];
             Assert.Throws<ArgumentException>(() => MergeSorter.Sort(array));
         }
-
 
         private static int[] GenerateArray()
         {

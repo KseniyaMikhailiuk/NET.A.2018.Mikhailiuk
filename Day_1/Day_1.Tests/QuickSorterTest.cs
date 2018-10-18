@@ -30,7 +30,6 @@ namespace Day_1.Tests
             Assert.Throws<ArgumentException>(() => QuickSorter.Sort(array));
         }
 
-
         private static int[] GenerateArray()
         {
             Random random = new Random();

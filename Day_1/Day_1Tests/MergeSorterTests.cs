@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Day_1.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class MergeSorterTests
     {
         public static int[] GenerateArray()
@@ -18,7 +18,7 @@ namespace Day_1.Tests
             return result;
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void Sort_hugeArrayTest()
         {
             int[] unsortedArray_1 = GenerateArray();
@@ -29,14 +29,14 @@ namespace Day_1.Tests
             CollectionAssert.AreEqual(unsortedArray_1, unsortedArray_2);
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void Sort_nullTest()
         {
             int[] array = null;
             Assert.ThrowsException<ArgumentNullException>(() => MergeSorter.Sort(array));
         }
 
-        [TestMethod()]
+        [TestMethod]
         public void Sort_emptyArrayTest()
         {
             int[] array = new int[0];

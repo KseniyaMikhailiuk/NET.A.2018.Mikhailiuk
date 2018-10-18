@@ -3,12 +3,12 @@
 namespace Day_1
 {
     /// <summary>
-    /// Provides method for sorting int array using quicksort algorithm.
+    /// Provides method for sorting <see cref="int"/>array using quicksort algorithm.
     /// </summary>
     public static class QuickSorter
     {
         /// <summary>
-        /// Sorts elements in int array using quicksort algorithm
+        /// Sorts elements in <see cref="int"/> array using quicksort algorithm
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
@@ -18,10 +18,12 @@ namespace Day_1
             {
                 throw new ArgumentNullException();
             }
-            if(array.Length < 1)
+
+            if (array.Length < 1)
             {
                 throw new ArgumentException("Array length must be > 1");
             }
+
             var resultArray = RedistributeElems(array, 0, array.Length - 1);
             Array.Copy(resultArray, array, array.Length);
         } 
@@ -39,12 +41,14 @@ namespace Day_1
                     {
                         leftPointer++;
                     }
+
                     ProcessRightSide(array, rightPointer, ref leftPointer, ref baseElemIndex);
                     if (rightPointer > baseElemIndex)
                     {
                         rightPointer--;
                     }
                 }
+
                 if (array.Length > 2)
                 {
                     DivideArray(array, baseElemIndex);
@@ -82,6 +86,7 @@ namespace Day_1
                 {
                     leftPointer++;
                 }
+
                 Swap(ref array[rightPointer], ref array[leftPointer]);
                 CheckandChangeBorders(ref baseElementIndex, leftPointer, rightPointer);
             }
@@ -95,6 +100,7 @@ namespace Day_1
                 {
                     rightPointer--;
                 }
+
                 Swap(ref array[leftPointer], ref array[rightPointer]);
                 CheckandChangeBorders(ref baseElementIndex, rightPointer, leftPointer);
             }

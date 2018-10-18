@@ -7,9 +7,15 @@ namespace Day_2
     /// </summary>
     public class NumberProcessor
     {
+        /// <summary>
+        /// Max index
+        /// </summary>
         private const int MAXINDEX = 31;
-        private const int MININDEX = 0;
 
+        /// <summary>
+        /// Min index
+        /// </summary>
+        private const int MININDEX = 0;
 
         /// <summary>
         /// Inserts bits from source number into certain bits of destination number 
@@ -24,8 +30,8 @@ namespace Day_2
             {
                 throw new ArgumentException("Check indexes");
             }
-            destinationNumber = BitOperations(destinationNumber);
 
+            destinationNumber = BitOperations(destinationNumber);
 
             int BitOperations(int destination)
             {

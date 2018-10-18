@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{425AAD9B-9481-4622-B674-DD51BB6DBB23}</ProjectGuid>
+    <ProjectGuid>{405D2D7C-3725-4F81-BB33-5563B9A948CF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Day_2.NUnitTests</RootNamespace>
-    <AssemblyName>Day_2.NUnitTests</AssemblyName>
+    <RootNamespace>Day_4.NUnitTests</RootNamespace>
+    <AssemblyName>Day_4.NUnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -48,16 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NumberProcessorTests.cs" />
+    <Compile Include="Formatter_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Day_2\Day_2.csproj">
-      <Project>{86cdca0e-cc88-4fa3-83d0-d3e61700539a}</Project>
-      <Name>Day_2</Name>
+    <ProjectReference Include="..\Day_4\Day_4.csproj">
+      <Project>{99413d33-3837-494d-87fe-921cd7ba0d27}</Project>
+      <Name>Day_4</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
