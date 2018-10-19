@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="DoubleExtension_Tests.cs" />
     <Compile Include="Formatter_Tests.cs" />
+    <Compile Include="GCD_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +64,10 @@
     <ProjectReference Include="..\Day_4_DoubleToIEEE754\Day_4_DoubleToIEEE754.csproj">
       <Project>{7e08248a-46b9-4e60-84f1-fb989620a8d5}</Project>
       <Name>Day_4_DoubleToIEEE754</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Day_4_GreatestCommonDivisor\Day_4_GreatestCommonDivisor.csproj">
+      <Project>{ea82aafb-5a7f-49d7-a78b-6942d5f259cc}</Project>
+      <Name>Day_4_GreatestCommonDivisor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

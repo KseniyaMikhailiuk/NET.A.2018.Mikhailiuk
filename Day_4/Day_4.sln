@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day_4.NUnitTests", "Day_4.N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day_4_DoubleToIEEE754", "Day_4_DoubleToIEEE754\Day_4_DoubleToIEEE754.csproj", "{7E08248A-46B9-4E60-84F1-FB989620A8D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day_4_GreatestCommonDivisor", "Day_4_GreatestCommonDivisor\Day_4_GreatestCommonDivisor.csproj", "{EA82AAFB-5A7F-49D7-A78B-6942D5F259CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7E08248A-46B9-4E60-84F1-FB989620A8D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E08248A-46B9-4E60-84F1-FB989620A8D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E08248A-46B9-4E60-84F1-FB989620A8D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA82AAFB-5A7F-49D7-A78B-6942D5F259CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA82AAFB-5A7F-49D7-A78B-6942D5F259CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA82AAFB-5A7F-49D7-A78B-6942D5F259CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA82AAFB-5A7F-49D7-A78B-6942D5F259CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
