@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoubleExtension_Tests.cs" />
     <Compile Include="Formatter_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,9 +56,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Day_4\Day_4.csproj">
+    <ProjectReference Include="..\Day_4\Day_4_DoubleToWords.csproj">
       <Project>{99413d33-3837-494d-87fe-921cd7ba0d27}</Project>
-      <Name>Day_4</Name>
+      <Name>Day_4_DoubleToWords</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Day_4_DoubleToIEEE754\Day_4_DoubleToIEEE754.csproj">
+      <Project>{7e08248a-46b9-4e60-84f1-fb989620a8d5}</Project>
+      <Name>Day_4_DoubleToIEEE754</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
